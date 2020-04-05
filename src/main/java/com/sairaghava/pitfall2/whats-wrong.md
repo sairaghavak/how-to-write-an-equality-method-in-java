@@ -1,0 +1,1 @@
+### Pitfall 2 - Changing equals without also changing hashcode
