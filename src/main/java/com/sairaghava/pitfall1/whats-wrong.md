@@ -1,4 +1,4 @@
-### Pitfall 1 - Defining equals with wrong signature
+### Pitfall 1 - Defining `equals()` with wrong signature
 
 - In Pitfall 1, the Object's `equals()` method is not overridden, rather it is overloaded
 - So during compile time the Point object will have

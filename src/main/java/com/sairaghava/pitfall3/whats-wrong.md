@@ -1,0 +1,1 @@
+### Pitfall 3 - Defining `equals()` and `hashCode()` but class having mutable fields

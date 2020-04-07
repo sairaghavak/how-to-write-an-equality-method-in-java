@@ -1,4 +1,4 @@
-### Pitfall 2 - Changing equals without changing hashcode
+### Pitfall 2 - Changing `equals()` without changing `hashCode()`
 
 - Add objects to hash-based collections like `HashSet` that has method
   - `contains()` it first calls Object's equals -> which will check for referrential equality
