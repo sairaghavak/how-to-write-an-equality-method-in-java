@@ -14,7 +14,7 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 @TestInstance(Lifecycle.PER_CLASS)
 public class PointTest {
 
-  private Point p1, p2, q;
+  private Point p1, p2, q, r;
   private Object p;
   private HashSet<Point> set;
 
@@ -23,6 +23,7 @@ public class PointTest {
     p1 = new Point(1, 2);
     p2 = new Point(1, 2);
     q = new Point(2, 3);
+    r = new Point(1, 3);
     p = p1;
   }
 
@@ -79,6 +80,7 @@ public class PointTest {
   @DisplayName("return_false_on_equals_with_same_type_and_distinct_data_and_same_reference_type")
   public void testEqualityOnTwoDistinctObjectsWithDistinctTypes() {
     assertFalse(p1.equals(q));
+    assertFalse(p1.equals(r));
   }
 
   /* Test cases for Objects added to a collection */
