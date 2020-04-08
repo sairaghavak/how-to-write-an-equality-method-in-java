@@ -1,7 +1,6 @@
-package com.sairaghava.pitfall1;
+package com.sairaghava.pitfall3;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.HashSet;
 import org.junit.jupiter.api.BeforeAll;
@@ -45,9 +44,9 @@ public class PointTest {
   }
 
   @Test
-  @DisplayName("return_false_on_transitive_property")
+  @DisplayName("return_true_on_transitive_property")
   public void testTransitive() {
-    assertFalse(p1.equals(p2) && p2.equals(p) && p1.equals(p));
+    assertTrue(p1.equals(p2) && p2.equals(p) && p1.equals(p));
   }
 
   @Test
@@ -57,9 +56,9 @@ public class PointTest {
   }
 
   @Test
-  @DisplayName("throw_npe_on_equals_with_null")
+  @DisplayName("return_false_on_equals_with_null")
   public void testNullEquality() {
-    assertThrows(NullPointerException.class, () -> assertFalse(p1.equals(null)));
+    assertFalse(p1.equals(null));
   }
 
   @Test
@@ -71,8 +70,8 @@ public class PointTest {
   @Test
   @DisplayName("return_true_on_equals_with_same_type_and_same_data_but_distinct_reference_type")
   public void testEqualityOnTwoSimilarObjectsWithDistinctReferenceTypes() {
-    assertTrue(p1.equals(p)); // calls Overloaded Object's equals() method p1 = p(p1)
-    assertFalse(p2.equals(p)); // calls Overloaded Object's equals() method p2 != p(p1)
+    assertTrue(p1.equals(p)); // calls Overriden Object's equals() method
+    assertTrue(p2.equals(p)); // calls Overriden Object's equals() method
   }
 
   @Test
@@ -84,24 +83,16 @@ public class PointTest {
 
   /* Test cases for Objects added to a collection */
   @Test
-  @DisplayName("throw_assertion_error_when_adding_duplicates_to_set")
+  @DisplayName("return_false_when_adding_duplicates_to_set")
   public void testIfSetAddsDuplicate() {
     set.add(p1);
-    assertThrows(AssertionError.class, () -> assertFalse(set.add(p2)));
-    /*- Ideal case is a set should not add duplicate objects. 
-        BUT
-        In this case it will add p2 as in this case it calls Object's equals method which performs referrential equality check first which returns false
-    */
+    assertFalse(set.add(p2));
   }
 
   @Test
-  @DisplayName("throw_assertion_error_when_set_contains_method_returns_false_on_duplicate_search")
+  @DisplayName("return_true_when_searched_for_duplicate")
   public void testIfSetContainsDuplicate() {
     set.add(p1);
-    assertThrows(AssertionError.class, () -> assertTrue(set.contains(p2)));
-    /*- Ideal case is it should have p2 already as p1 and p2 have same content and they are equal
-        BUT
-        In this case it will call Object's equal method which performs referrential euquality check which returns false
-    */
+    assertTrue(set.contains(p2));
   }
 }

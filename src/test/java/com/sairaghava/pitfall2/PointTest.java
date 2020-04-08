@@ -13,7 +13,6 @@ import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 @TestInstance(Lifecycle.PER_CLASS)
 public class PointTest {
-
   private Point p1, p2, q, r;
   private Object p;
   private HashSet<Point> set;
