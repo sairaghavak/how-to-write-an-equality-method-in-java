@@ -2,7 +2,9 @@ package com.sairaghava.pitfall3;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.HashSet;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -82,17 +84,35 @@ public class PointTest {
   }
 
   /* Test cases for Objects added to a collection */
-  @Test
+  /*-@Test
   @DisplayName("return_false_when_adding_duplicates_to_set")
   public void testIfSetAddsDuplicate() {
     set.add(p1);
     assertFalse(set.add(p2));
   }
-
+  
   @Test
   @DisplayName("return_true_when_searched_for_duplicate")
   public void testIfSetContainsDuplicate() {
     set.add(p1);
+    assertTrue(set.contains(p1));
     assertTrue(set.contains(p2));
   }
+  
+  @Test
+  @DisplayName("return_false_on_contains_of_a_set_when_a_set_element_is_mutated")
+  public void testContainsAfterMutatingAField() {
+    set.add(p1);
+    p1.setX(p1.getY() + 1); // This will update p1's state and hashCode() in memory
+    assertFalse(set.contains(p1)); // Returns false as p1's new hasCode() is searched for in Set
+  }
+  
+  @Test
+  @DisplayName("return_true_when_mutated_object_is_found_by_filtering_using_equals_from_set")
+  public void filterTheSetWithMutatedObject() {
+    set.add(p1);
+    p1.setX(p1.getY() + 2); // This will update p1's state and hashCode() in memory
+    assertEquals(1, set.stream().filter(point -> point.equals(p1)).count());
+    assertEquals(4, set.stream().filter(point -> point.equals(p1)).findFirst().get().getX());
+  }*/
 }

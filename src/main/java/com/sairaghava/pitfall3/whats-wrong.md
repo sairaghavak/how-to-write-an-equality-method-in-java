@@ -26,4 +26,7 @@
 For example, a bucket is tagged as Vegetables(hashCode=456) inside this bucket it wil have veggies and there could be another bucket called Fruits(hashCode=123)
 If we do `add("tomato")`, as it's veggie it will select the bucket to get into, in this case it should get into vegetables bucket, later it will see if there is already tomato in the bucket, it will be added only if it doesn't exist***
 
-> **Remedy/Fix: When overriding `equals()` & `hashCode()` ensure that they don't depend on mutable state, as it may cause problems like this(pitfall3)**
+
+***Note:This pitfall also illustrates the difference between a `contains()` method of a Collection and `equals()` of an Object***
+
+> **Remedy/Fix: When overriding `equals()` & `hashCode()` ensure that they don't depend on mutable state**
