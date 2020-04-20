@@ -112,8 +112,10 @@ public class PointTest {
   public void filterTheSetWithMutatedObject() {
     set.add(p1);
     p1.setX(p1.getY() + 2); // This will update p1's state and hashCode() in memory
+    p1.setY(p1.getX() + 1); // This will again update p1's state and hashCode() in memory
     assertEquals(1, set.stream().filter(point -> point.equals(p1)).count());
     /*- equals() calls overridden equals() method in Point class */
     assertEquals(4, set.stream().filter(point -> point.equals(p1)).findFirst().get().getX());
+    assertEquals(5, set.stream().filter(point -> point.equals(p1)).findFirst().get().getY());
   }
 }
