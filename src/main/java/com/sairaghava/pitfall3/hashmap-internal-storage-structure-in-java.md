@@ -70,7 +70,7 @@
           |Index|Node|
           |---|---|
           |0| null|
-          |1| ```|"srk"|1|1234|null|```|
+          |1|`|"srk"|1|1234|null)|`|
           |2| null|
 - `put("sairaghava", 109)`
   - **Steps**  
@@ -87,8 +87,8 @@
           |Index|Node|
           |---|---|
           |0| null|
-          |1| ```|"srk"|1|1234|null|```|
-          |2| ```|"sairaghava"|109|6549|null|```|
+          |1| `|"srk"|1|1234|null|`|
+          |2| `|"sairaghava"|109|6549|null|`|
 - `put('srk', 1)` - Collision Example - Keys matching
     - **Steps**  
       1. Assumptions: nodes.length = 3
@@ -107,8 +107,8 @@
             - |Index|Node|
               |---|---|
               |0| null|
-              |1| ```|"srk"|1|1234|null|```|
-              |2| ```|"sairaghava"|109|6549|null|```|
+              |1| `|"srk"|1|1234|null|`|
+              |2| `|"sairaghava"|109|6549|null|`|
 
 - `put('srk-hero', 3)` - Collision Example - Keys don't match
   - **Steps**  
@@ -129,5 +129,5 @@
               - |Index|Node|
                 |---|---|
                 |0| null|
-                |1| ```|"srk"|1|1234|next =``` ```("srk-hero"|3|9989|null)|```
-                |2| ```|"sairaghava"|109|6549|null|```|
+                |1| `|"srk"|1|1234|next =|"srk-hero"|3|9989|null)||`
+                |2| `|"sairaghava"|109|6549|null|`|
