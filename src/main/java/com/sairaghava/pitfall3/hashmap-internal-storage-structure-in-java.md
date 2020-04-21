@@ -70,7 +70,7 @@
           |Index|Node|
           |---|---|
           |0| null|
-          |1|`|"srk"|1|1234|null)|`|
+          |1|"`|"srk"|1|1234|null)|`"|
           |2| null|
 - `put("sairaghava", 109)`
   - **Steps**  
