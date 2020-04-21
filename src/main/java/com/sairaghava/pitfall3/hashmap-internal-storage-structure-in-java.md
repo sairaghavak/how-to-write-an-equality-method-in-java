@@ -1,4 +1,4 @@
-### How does HashMap stores it's key and values?
+### How does HashMap stores its key and values?
   - The internal data structure of HashMap is as explained below
     - Consider the following Node Object, in other words a Singly LinkedList implementation
       ```
@@ -41,14 +41,6 @@
         arr[arrIndex] = new Node(key, value, hash, next);
       }
       ```
-- Note that `HashSet` is a wrapper on top of `HashMap`
-- Example a HashSet = {1}
-- It's backed by a HashMap internally as shown below
-  ```
-  private static final Object PRESENT = new Object();
-  > Note: Format of storage is : new Node(key, value, hash(key), nextNode)
-  [0] - new Node(hash(1), 1, PRESENT, null)
-  ```
 
 ### Example Illustration/Debugging a Map.put operation
 - Imagine an array of Node objects of size = 3
