@@ -92,7 +92,17 @@ public class PointTest {
     assertThrows(AssertionError.class, () -> assertFalse(set.add(p2)));
     /*- Ideal case is a set should not add duplicate objects. 
         BUT
-        In this case it will add p2 as in this case it calls Object's equals method which performs referrential equality check first which returns false
+        In this case it will add(p2) which 
+        tries to do 
+        put(p2, PRESENT), 
+        then hash(p2) meaning hashCode() of p2 is looked for 
+        if not found 
+          then it is added/put to hashMap as a new entry, 
+            i.e., this put operations has no previous value it returns null, 
+        else if there is old value then return old value => old-value==null, 
+           then add(p2) returns true.
+        BUT
+        As we are expecting FALSE, it throws AssertionError
     */
   }
 
