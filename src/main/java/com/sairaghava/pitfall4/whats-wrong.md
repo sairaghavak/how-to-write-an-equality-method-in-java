@@ -1,1 +1,1 @@
-### Pitfall 4 - 
+### Pitfall 4 - Failure to define equals as equivalence relation when subclasess are  - Equals not symmetric (if a = b, the b = a)

@@ -1,0 +1,1 @@
+### Pitfall 5 - Failure to define equals as equivalence relation when subclasess are  - Equals not transitive (if a = b and b = c, then a = c)

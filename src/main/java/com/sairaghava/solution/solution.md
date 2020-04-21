@@ -1,0 +1,1 @@
+### `canEqual()` method 

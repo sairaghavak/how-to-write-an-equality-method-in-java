@@ -1,0 +1,1 @@
+### Pitfall 6 - A technically valid but, unsatisfying, equals method
