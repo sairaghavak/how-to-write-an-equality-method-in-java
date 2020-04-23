@@ -16,6 +16,9 @@ public class ColoredPoint extends Point {
     if (other instanceof ColoredPoint) {
       ColoredPoint that = (ColoredPoint) other;
       result = this.color.equals(that.color) && super.equals(that);
+    } else if (other instanceof Point) {
+      Point that = (Point) other;
+      result = that.equals(this); // delegate the call to Point's equals() method
     }
     return result;
   }
