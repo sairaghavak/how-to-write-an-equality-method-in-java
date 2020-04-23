@@ -59,6 +59,13 @@ public class PointTest {
     assertFalse(p1.equals(null));
   }
 
+  @Test
+  @DisplayName("return_false_on_equals_with_same_type_and_distinct_data_and_same_reference_type")
+  public void testEqualityOnTwoDistinctObjectsWithDistinctTypes() {
+    assertFalse(p1.equals(q));
+    assertFalse(p1.equals(r));
+  }
+
   /* Test cases for Objects added to a collection */
   @Test
   @DisplayName("return_false_when_adding_duplicates_to_set")
