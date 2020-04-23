@@ -23,7 +23,7 @@ public class ColoredPointTest {
   @BeforeAll
   public void setup() {
     p = new Point(1, 2);
-    cp = new ColoredPoint(1, 2, Color.BROWN);
+    cp = new ColoredPoint(1, 2, Color.BLACK);
     set = new HashSet<>();
   }
 
