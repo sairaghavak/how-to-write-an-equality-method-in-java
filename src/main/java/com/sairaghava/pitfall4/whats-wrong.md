@@ -14,6 +14,8 @@
     cp.contains(p); // Search for Point and it returns true. Why?
     //Reason: p.hashCode() is searched in set, if found, p.equals(eachItem in the Node)
     ```
-- Finally, the problem is ColoredPoint is Not Symmertric
+- Finally, the problem is ColoredPoint is Not Symmertric. To overcome this problem, we have 2 options. 
+  - 1. Either make `equals()` in ColoredPoint more general - Pitfall5
+  - 2. Or make `equals()` in ColoredPoint more stricter - Pitfall6
 
-> **Remedy/Fix: Try to make the equals() method in ColoredPoint as more General, so that cp.equals(p) should return true**
+> **Remedy/Fix: Try to make the equals() method in ColoredPoint <u>as more General</u>, so that cp.equals(p) should return true**
