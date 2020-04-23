@@ -15,10 +15,18 @@ public class ColoredPoint extends Point {
     boolean result = false;
     if (other instanceof ColoredPoint) {
       ColoredPoint that = (ColoredPoint) other;
-      result = this.color.equals(that.color) && super.equals(that);
+      result = that.canEqual(this) && this.color.equals(that.color) && super.equals(that);
     }
     return result;
   }
 
-  // if you don't override hashCode in this class, it calls superClass(Point) hashCode()
+  @Override
+  public int hashCode() {
+    return (41 * (41 + super.hashCode() + color.hashCode()));
+  }
+
+  @Override
+  public boolean canEqual(Object other) {
+    return (other instanceof ColoredPoint);
+  }
 }

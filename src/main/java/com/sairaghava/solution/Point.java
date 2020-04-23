@@ -22,7 +22,7 @@ public class Point {
     boolean result = false;
     if (other instanceof Point) {
       Point that = (Point) other;
-      result = this.getX() == that.getX() && this.getY() == that.getY();
+      result = that.canEqual(this) && this.getX() == that.getX() && this.getY() == that.getY();
     }
     return result;
   }
@@ -30,5 +30,9 @@ public class Point {
   @Override
   public int hashCode() {
     return (41 * (41 + getX()) + getY());
+  }
+
+  public boolean canEqual(Object other) {
+    return (other instanceof Point);
   }
 }
