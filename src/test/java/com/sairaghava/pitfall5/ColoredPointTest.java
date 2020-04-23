@@ -58,8 +58,10 @@ public class ColoredPointTest {
   public void testTransitivity() {
     assertTrue(blackPoint.equals(p));
     assertTrue(p.equals(whitePoint));
-    assertThrows(AssertionError.class, () -> assertTrue(
-        blackPoint.equals(p) && p.equals(whitePoint) && blackPoint.equals(whitePoint)));
+    assertThrows(AssertionError.class,
+        () -> assertTrue((blackPoint.equals(p) && p.equals(whitePoint))
+            ? (blackPoint.equals(whitePoint) == Boolean.TRUE)
+            : Boolean.TRUE));
   }
 
   @Test
