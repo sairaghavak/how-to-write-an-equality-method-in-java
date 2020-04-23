@@ -57,6 +57,19 @@ public class ColoredPointTest {
     assertTrue(p.equals(blackPoint) ? (blackPoint.equals(p) == Boolean.TRUE) : Boolean.TRUE);
   }
 
+  /*- This test case no meaning, but to make cover the missing branch in code coverage */
+  @Test
+  @DisplayName("return_false_on_equals_with_anonymous_sub_class_having_can_equal_false")
+  public void testEqualityWithAnonymousSubClass() {
+    ColoredPoint cpAnonymous = new ColoredPoint(1, 2, Color.BLACK) {
+      @Override
+      public boolean canEqual(Object other) {
+        return false;
+      }
+    };
+    assertFalse(blackPoint.equals(cpAnonymous));
+  }
+
   @Test
   @DisplayName("return_true_when_checked_for_transitive_property")
   public void testTransitivity() {
